@@ -135,4 +135,4 @@ loss <- function(values = c("likelihood","MSE","MAE","HAM","LASSO","RIDGE","MSEh
         label     = c(loss = "The type of Loss Function used in optimization."),
         finalize  = NULL
     )
-}
+} 
