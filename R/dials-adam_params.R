@@ -18,7 +18,7 @@
 #'  - `distribution`: What density function to assume for the error term.
 #'  - `information_criteria`: The information criterion to use in the model selection / combination procedure.
 #'  - `select_order`: If TRUE, then the function will select the most appropriate order.
-#'
+#'  - `loss`: The type of Loss Function used in optimization.
 #' @returns  A `dials` parameter
 #'
 #' @examples
@@ -120,6 +120,19 @@ select_order <- function(values = c(FALSE, TRUE)) {
         default   = FALSE,
         values    = values,
         label     = c(select_order = "If TRUE, then the function will select the most appropriate order."),
+        finalize  = NULL
+    )
+}
+
+#' @export
+#' @return A parameter
+#' @rdname adam_params
+loss <- function(values = c("likelihood","MSE","MAE","HAM","LASSO","RIDGE","MSEh","TMSE","GTMSE","MSCE")){
+    dials::new_qual_param(
+        type      = "character",
+        default   = "likelihood",
+        values    = values,
+        label     = c(loss = "The type of Loss Function used in optimization."),
         finalize  = NULL
     )
 }
