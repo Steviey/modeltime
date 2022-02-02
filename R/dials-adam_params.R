@@ -127,7 +127,7 @@ select_order <- function(values = c(FALSE, TRUE)) {
 #' @export
 #' @return A parameter
 #' @rdname adam_params
-loss <- function(values = c("likelihood","MSE","MAE","HAM","LASSO","RIDGE","MSEh","TMSE","GTMSE","MSCE")){
+loss <- function(values = c("likelihood","MSE","MAE","HAM","LASSO","RIDGE","MSEh","TMSE","GTMSE","MSCE")) {
     dials::new_qual_param(
         type      = "character",
         default   = "likelihood",
